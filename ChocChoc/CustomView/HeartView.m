@@ -8,19 +8,43 @@
 
 #import "HeartView.h"
 #import "DataClass.h"
+#import "UIColor+COLORCategories.h"
 
 @implementation HeartView
-@synthesize heartImage;
+@synthesize heartImage, smallHeart1, smallHeart2;
+@synthesize textLabel, textLabel2;
 
 + (id)heartView
 {
     HeartView * heartView = [[[NSBundle mainBundle] loadNibNamed:@"HeartView" owner:nil options:nil] lastObject];
     
+    // Hide small heart
+    [[heartView smallHeart1] setHidden:YES];
+    [[heartView smallHeart2] setHidden:YES];
+    
     // set heart image
     DataClass * instance = [DataClass getInstance];
     int percent = instance.percent;
-    percent = (percent/10) * 10;
-    [[heartView heartImage] setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%d", percent]]];
+    if(percent == 0){
+        [[heartView heartImage] setImage:[UIImage imageNamed:@"0"]];
+    }else{
+        percent = (percent/10) * 10 + 10;
+        if(percent > 100){
+            percent = 100;
+        }
+        [[heartView heartImage] setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%d", percent]]];
+        if(percent == 90){
+            [[heartView smallHeart1] setHidden:NO];
+        }else if(percent == 100){
+            [[heartView smallHeart2] setHidden:NO];
+        }
+    }
+    
+    // set Text Label
+    [[heartView textLabel] setFont:[UIFont fontWithName:@"Futura-CondensedMedium" size:26]];
+    [[heartView textLabel] setTextColor:[UIColor colorWithRGBHex:0xF37F92]];
+   
+    [[heartView textLabel2] setTextColor:[UIColor colorWithRGBHex:0x666666]];
     
     // set view frame
     CGRect frame;

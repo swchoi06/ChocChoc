@@ -14,15 +14,41 @@
                     <rect key="frame" x="72" y="86" width="176" height="148"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="100_heart.png" translatesAutoresizingMaskIntoConstraints="NO" id="OCL-RR-HqT">
+                    <rect key="frame" x="133" y="33" width="54" height="45"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="90_heart.png" translatesAutoresizingMaskIntoConstraints="NO" id="DCk-yk-vtt">
+                    <rect key="frame" x="163" y="57" width="23" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="4200min / -200min" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TmQ-Kz-nsT">
+                    <rect key="frame" x="28" y="242" width="264" height="67"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="마지막 스킨십으로부터 4200 min 지났습니다" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="199" translatesAutoresizingMaskIntoConstraints="NO" id="B2v-Zr-P48">
+                    <rect key="frame" x="61" y="317" width="199" height="68"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
             <connections>
                 <outlet property="heartImage" destination="eMu-Sn-bLg" id="H9P-it-KIk"/>
+                <outlet property="smallHeart1" destination="DCk-yk-vtt" id="WrX-h7-JyC"/>
+                <outlet property="smallHeart2" destination="OCL-RR-HqT" id="S6f-J8-DTf"/>
+                <outlet property="textLabel" destination="TmQ-Kz-nsT" id="WOa-zm-N2z"/>
+                <outlet property="textLabel2" destination="B2v-Zr-P48" id="Zl0-Yq-75M"/>
             </connections>
         </view>
     </objects>
     <resources>
+        <image name="100_heart.png" width="216" height="183"/>
         <image name="50.png" width="704" height="591"/>
+        <image name="90_heart.png" width="68" height="65"/>
     </resources>
 </document>

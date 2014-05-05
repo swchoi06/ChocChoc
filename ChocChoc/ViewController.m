@@ -22,7 +22,13 @@
 @synthesize heartButton, statisticButton, alarmButton, settingButton, backgroundImageView;
 
 - (void)uploadView{
+    DataClass * instance = [DataClass getInstance];
+    instance.percent += 5;
+    if(instance.percent >= 100) {
+        instance.percent = 100;
+    }
     [self changeTab:currentTab];
+//    NSLog([NSString stringWithFormat:@"repeat %d", currentTab]);
 }
 
 - (void)changeTab:(int)index{
@@ -82,10 +88,11 @@
             break;
     }
     
+    // Update currentTab
+    currentTab = index;
 }
 - (IBAction)buttonClicked:(id)sender{
     [self changeTab:[sender tag]];
-
 }
 - (void)initButtons{
     heartButton.tag = 1;
@@ -138,8 +145,12 @@
     // Init Views
     [self initViews];
     
-    currentTab = 0;
-    [self changeTab:1];
+    currentTab = 1;
+    [self changeTab:currentTab];
+    
+
+    // Set update function
+    [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(uploadView) userInfo:nil repeats:YES];
 }
 
 - (void)didReceiveMemoryWarning

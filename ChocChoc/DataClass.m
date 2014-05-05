@@ -21,7 +21,7 @@ static DataClass * instance = nil;
             instance.tabbarSize = 85;
             instance.recharge = 100;
             instance.discharge = 500;
-            instance.percent = 70;
+            instance.percent = 0;
         }
     }
     return instance;

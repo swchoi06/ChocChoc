@@ -12,6 +12,11 @@
     
 }
 @property (nonatomic, strong) IBOutlet UIImageView * heartImage;
+@property (nonatomic, strong) IBOutlet UIImageView * smallHeart1;
+@property (nonatomic, strong) IBOutlet UIImageView * smallHeart2;
+
+@property (nonatomic, strong) IBOutlet UILabel * textLabel;
+@property (nonatomic, strong) IBOutlet UILabel * textLabel2;
 
 + (id)heartView;
 @end

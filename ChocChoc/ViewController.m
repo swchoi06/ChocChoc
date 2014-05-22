@@ -22,13 +22,14 @@
 @synthesize heartButton, statisticButton, alarmButton, settingButton, backgroundImageView;
 
 - (void)uploadView{
+    // Update Dataclass here
     DataClass * instance = [DataClass getInstance];
-    instance.percent += 5;
-    if(instance.percent >= 100) {
-        instance.percent = 100;
-    }
+    
+    
+    
+    // 
     [self changeTab:currentTab];
-//    NSLog([NSString stringWithFormat:@"repeat %d", currentTab]);
+    [DataClass saveCustomObject:instance key:@"dataclass"];
 }
 
 - (void)changeTab:(int)index{
@@ -150,6 +151,7 @@
     
 
     // Set update function
+    [self uploadView];
     [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(uploadView) userInfo:nil repeats:YES];
 }
 

@@ -13,12 +13,17 @@
     double recharge;    // 완전 충전까지 걸리는 시간(분)
     double discharge;   // 완전 방전까지 걸리는 시간(분)
     double percent;     // 하트 충전 퍼센트
+    NSDate * lastCharge;
 }
 @property (nonatomic, assign) double tabbarSize;
 @property (nonatomic, assign) double recharge;
 @property (nonatomic, assign) double discharge;
 @property (nonatomic, assign) double percent;
+@property (nonatomic, retain) NSDate * lastCharge;
 
 + (DataClass *)getInstance;
+
++(void)saveCustomObject:(DataClass *)object key:(NSString *)key;
++(DataClass *)loadCustomObjectWithKey:(NSString *)key;
 
 @end

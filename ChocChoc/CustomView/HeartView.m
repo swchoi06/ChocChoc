@@ -43,6 +43,7 @@
     // set Text Label
     [[heartView textLabel] setFont:[UIFont fontWithName:@"Futura-CondensedMedium" size:26]];
     [[heartView textLabel] setTextColor:[UIColor colorWithRGBHex:0xF37F92]];
+    [[heartView textLabel] setText:[NSString stringWithFormat:@"%d분 / %d분", (int)instance.recharge, (int)instance.discharge]];
    
     [[heartView textLabel2] setTextColor:[UIColor colorWithRGBHex:0x666666]];
     

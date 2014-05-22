@@ -17,6 +17,7 @@
 
 @property (nonatomic, strong) IBOutlet UILabel * textLabel;
 @property (nonatomic, strong) IBOutlet UILabel * textLabel2;
+@property (nonatomic, strong) IBOutlet UILabel * textLabel3;
 
 + (id)heartView;
 @end

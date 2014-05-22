@@ -34,6 +34,12 @@
                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="199" translatesAutoresizingMaskIntoConstraints="NO" id="GOF-40-58x">
+                    <rect key="frame" x="61" y="382" width="199" height="55"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
@@ -43,6 +49,7 @@
                 <outlet property="smallHeart2" destination="OCL-RR-HqT" id="S6f-J8-DTf"/>
                 <outlet property="textLabel" destination="TmQ-Kz-nsT" id="WOa-zm-N2z"/>
                 <outlet property="textLabel2" destination="B2v-Zr-P48" id="Zl0-Yq-75M"/>
+                <outlet property="textLabel3" destination="GOF-40-58x" id="oIh-0I-Abw"/>
             </connections>
         </view>
     </objects>

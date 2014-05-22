@@ -10,7 +10,7 @@
 
 @implementation DataClass
 @synthesize tabbarSize;
-@synthesize recharge, discharge, percent, lastCharge;
+@synthesize recharge, discharge, percent, lastCharge, timeFromLastCharge, stringArray;
 
 static DataClass * instance = nil;
 
@@ -19,7 +19,9 @@ static DataClass * instance = nil;
     [encoder encodeDouble:self.tabbarSize forKey:@"tabbarSize"];
     [encoder encodeDouble:self.recharge forKey:@"recharge"];
     [encoder encodeDouble:self.discharge forKey:@"discharge"];
+    [encoder encodeDouble:self.timeFromLastCharge forKey:@"timeFromLastCharge"];
     [encoder encodeObject:self.lastCharge forKey:@"lastCharge"];
+    [encoder encodeObject:self.stringArray forKey:@"stringArray"];
 }
 
 - (id)initWithCoder:(NSCoder *)decoder {
@@ -28,7 +30,9 @@ static DataClass * instance = nil;
         self.tabbarSize = [decoder decodeDoubleForKey:@"tabbarSize"];
         self.recharge = [decoder decodeDoubleForKey:@"recharge"];
         self.discharge = [decoder decodeDoubleForKey:@"discharge"];
+        self.timeFromLastCharge = [decoder decodeDoubleForKey:@"timeFromLastCharge"];
         self.lastCharge = [decoder decodeObjectForKey:@"lastCharge"];
+        self.stringArray = [decoder decodeObjectForKey:@"stringArray"];
     }
     return self;
 }
@@ -58,7 +62,9 @@ static DataClass * instance = nil;
                 instance.recharge = 4100;
                 instance.discharge = -200;
                 instance.percent = 0;
+                instance.timeFromLastCharge = 0;
                 instance.lastCharge = [NSDate date];
+                instance.stringArray = [NSArray arrayWithObjects:@"끄아앙.. 살려주세요..ㅠㅠ", @"위험상황!! 스킨십이 필요해요~!!", @"미리 미리 채워주세요. 손 잡으러 Go Go!", @"손을 잡자 손을 잡자 촉촉촉~", @"스킨십이 풍부한 당신, 사랑합니다", @"충전 만땅!", nil];
             }
         }
     }

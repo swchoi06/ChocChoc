@@ -12,7 +12,7 @@
 
 @implementation HeartView
 @synthesize heartImage, smallHeart1, smallHeart2;
-@synthesize textLabel, textLabel2;
+@synthesize textLabel, textLabel2, textLabel3;
 
 + (id)heartView
 {
@@ -44,8 +44,24 @@
     [[heartView textLabel] setFont:[UIFont fontWithName:@"Futura-CondensedMedium" size:26]];
     [[heartView textLabel] setTextColor:[UIColor colorWithRGBHex:0xF37F92]];
     [[heartView textLabel] setText:[NSString stringWithFormat:@"%d분 / %d분", (int)instance.recharge, (int)instance.discharge]];
-   
+    
     [[heartView textLabel2] setTextColor:[UIColor colorWithRGBHex:0x666666]];
+    [[heartView textLabel2] setText:[NSString stringWithFormat:@"마지막 스킨십으로부터 %d분 지났습니다", (int)instance.timeFromLastCharge]];
+    
+    [[heartView textLabel3] setTextColor:[UIColor colorWithRGBHex:0x666666]];
+    if(instance.percent == 0){
+        [[heartView textLabel3]setText:instance.stringArray[0]];
+    }else if(instance.percent <10){
+        [[heartView textLabel3]setText:instance.stringArray[1]];
+    }else if(instance.percent <50){
+        [[heartView textLabel3]setText:instance.stringArray[2]];
+    }else if(instance.percent <90){
+        [[heartView textLabel3]setText:instance.stringArray[3]];
+    }else if(instance.percent <100){
+        [[heartView textLabel3]setText:instance.stringArray[4]];
+    }else{
+        [[heartView textLabel3]setText:instance.stringArray[5]];
+    }
     
     // set view frame
     CGRect frame;
